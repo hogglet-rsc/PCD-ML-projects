@@ -23,9 +23,5 @@ This model detects and numbers microtubule doublets (MTDs) in ciliary cross-sect
 2. Run `inference_numbering.ipynb`
 3. Check results in respective output folders
 
-## Requirements
 
-- Intel GETi platform
-- [List other dependencies]
-
-Note: Images require 9 MTDs and 1 CP for successful numbering.
+Note: Images require 9 MTDs and 1 CP for successful numbering, otherwise 'Unusable'
