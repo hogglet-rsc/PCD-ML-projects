@@ -1,0 +1,19 @@
+import os
+
+# Directories to clear
+dirs = [
+    "/home/shogg/RBHT projects github/CVAE/Best Models & Tensors/224x224_150epochs_10ki",
+    "/home/shogg/RBHT projects github/CVAE/Best Models & Tensors/224x224_200epochs",
+    "/home/shogg/RBHT projects github/CVAE/Best Models & Tensors/448x448_200epochs",
+    "/home/shogg/RBHT projects github/CVAE/Processed Input Images",
+    "/home/shogg/RBHT projects github/CVAE/Current Models & Tensors"
+]
+
+for d in dirs:
+    for subdir in os.listdir(d):
+        subdir_path = os.path.join(d, subdir)
+        if os.path.isdir(subdir_path):
+            for filename in os.listdir(subdir_path):
+                file_path = os.path.join(subdir_path, filename)
+                if os.path.isfile(file_path):
+                    os.remove(file_path)

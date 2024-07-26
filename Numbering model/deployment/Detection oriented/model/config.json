@@ -1,0 +1,130 @@
+{
+    "type_of_model": "MaskRCNN",
+    "converter_type": "ROTATED_DETECTION",
+    "model_parameters": {
+        "result_based_confidence_threshold": true,
+        "confidence_threshold": 0.5249999761581421,
+        "nms_iou_threshold": 0.5,
+        "max_num_detections": 0,
+        "use_ellipse_shapes": false,
+        "resize_type": "standard",
+        "labels": {
+            "label_tree": {
+                "type": "tree",
+                "directed": true,
+                "nodes": [],
+                "edges": []
+            },
+            "label_groups": [
+                {
+                    "_id": "669e229602954db3cfcb77f3",
+                    "name": "Detection oriented labels",
+                    "label_ids": [
+                        "669e229602954db3cfcb77ee",
+                        "669e229602954db3cfcb77ef",
+                        "669e229602954db3cfcb77f0"
+                    ],
+                    "relation_type": "EXCLUSIVE"
+                },
+                {
+                    "_id": "669e229602954db3cfcb77f5",
+                    "name": "No object",
+                    "label_ids": [
+                        "669e229602954db3cfcb77f4"
+                    ],
+                    "relation_type": "EMPTY_LABEL"
+                }
+            ],
+            "all_labels": {
+                "669e229602954db3cfcb77ee": {
+                    "_id": "669e229602954db3cfcb77ee",
+                    "name": "MTD",
+                    "color": {
+                        "red": 37,
+                        "green": 161,
+                        "blue": 142,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-07-22T09:12:54.014000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "669e229602954db3cfcb77ef": {
+                    "_id": "669e229602954db3cfcb77ef",
+                    "name": "CP",
+                    "color": {
+                        "red": 255,
+                        "green": 125,
+                        "blue": 0,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-07-22T09:12:54.014000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "669e229602954db3cfcb77f0": {
+                    "_id": "669e229602954db3cfcb77f0",
+                    "name": "B-MT",
+                    "color": {
+                        "red": 237,
+                        "green": 178,
+                        "blue": 0,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-07-22T09:12:54.014000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "669e229602954db3cfcb77f4": {
+                    "_id": "669e229602954db3cfcb77f4",
+                    "name": "No object",
+                    "color": {
+                        "red": 0,
+                        "green": 0,
+                        "blue": 0,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-07-22T09:12:54.020000",
+                    "is_empty": true,
+                    "is_anomalous": false
+                }
+            }
+        }
+    },
+    "tiling_parameters": {
+        "visible_in_ui": true,
+        "type": "PARAMETER_GROUP",
+        "enable_tiling": false,
+        "enable_tile_classifier": false,
+        "enable_adaptive_params": true,
+        "tile_size": 400,
+        "tile_overlap": 0.2,
+        "tile_max_number": 1500,
+        "tile_ir_scale_factor": 1.0,
+        "tile_sampling_ratio": 1.0,
+        "object_tile_ratio": 0.03,
+        "header": "Tiling Parameters",
+        "description": "Tiling Parameters",
+        "_ParameterGroup__metadata_overrides": {},
+        "groups": [],
+        "parameters": [
+            "enable_adaptive_params",
+            "enable_tile_classifier",
+            "enable_tiling",
+            "object_tile_ratio",
+            "tile_ir_scale_factor",
+            "tile_max_number",
+            "tile_overlap",
+            "tile_sampling_ratio",
+            "tile_size"
+        ]
+    }
+}

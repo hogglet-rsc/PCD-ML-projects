@@ -1,0 +1,91 @@
+{
+   "id": "669e229502954db3cfcb77e6",
+   "name": "[Tom] Detection of MTDs, B-MT and CP",
+   "creation_time": "2024-07-22T09:12:54.017000+00:00",
+   "creator_id": "48b33567-38ca-4408-8558-5375e8bf20c3",
+   "pipeline": {
+      "tasks": [
+         {
+            "id": "669e229602954db3cfcb77e9",
+            "title": "Dataset",
+            "task_type": "dataset"
+         },
+         {
+            "id": "669e229602954db3cfcb77ec",
+            "title": "Detection oriented",
+            "task_type": "rotated_detection",
+            "labels": [
+               {
+                  "id": "669e229602954db3cfcb77ee",
+                  "name": "MTD",
+                  "is_anomalous": false,
+                  "color": "#25a18eff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "669e229602954db3cfcb77ef",
+                  "name": "CP",
+                  "is_anomalous": false,
+                  "color": "#ff7d00ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "669e229602954db3cfcb77f0",
+                  "name": "B-MT",
+                  "is_anomalous": false,
+                  "color": "#edb200ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "669e229602954db3cfcb77f4",
+                  "name": "No object",
+                  "is_anomalous": false,
+                  "color": "#000000ff",
+                  "hotkey": "",
+                  "is_empty": true,
+                  "group": "No object",
+                  "parent_id": null
+               }
+            ],
+            "label_schema_id": "669e229602954db3cfcb77f6"
+         }
+      ],
+      "connections": [
+         {
+            "from": "669e229602954db3cfcb77e9",
+            "to": "669e229602954db3cfcb77ec"
+         }
+      ]
+   },
+   "thumbnail": "/api/v1/organizations/f5ca681a-5cfc-4977-87e3-7a57cc4945ef/workspaces/f3d7b09b-b322-424d-8b44-d821a757f563/projects/669e229502954db3cfcb77e6/thumbnail",
+   "performance": {
+      "score": 0.9329758713136728,
+      "task_performances": [
+         {
+            "task_id": "669e229602954db3cfcb77ec",
+            "score": {
+               "value": 0.9329758713136728,
+               "metric_type": "f-measure"
+            }
+         }
+      ]
+   },
+   "storage_info": {},
+   "datasets": [
+      {
+         "id": "669e229602954db3cfcb77f1",
+         "name": "Dataset",
+         "use_for_training": true,
+         "creation_time": "2024-07-22T09:12:54.016000+00:00"
+      }
+   ]
+}

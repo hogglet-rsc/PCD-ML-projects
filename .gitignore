@@ -1,0 +1,21 @@
+# Virtual Environments
+**/venv/
+
+# Python cache files
+**/__pycache__/
+*.pyc
+
+# Large model files
+*.bin
+*.pack
+*.so
+
+# Specific large directories
+.git/objects/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS generated files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,87 @@
+import tensorflow as tf
+import numpy as np
+import os
+from PIL import Image
+import pandas as pd
+
+data_dir = '../Raw Input Images'
+output_dir = '../Processed Input Images'
+image_size = (448, 448)
+
+def get_image_stats(directory):
+    widths, heights, aspect_ratios = [], [], []
+    for root, _, files in os.walk(directory):
+        for file in files:
+            if file.lower().endswith(('.png', '.jpg', '.jpeg', '.tiff', '.bmp', '.gif')):
+                file_path = os.path.join(root, file)
+                try:
+                    with Image.open(file_path) as img:
+                        width, height = img.size
+                        widths.append(width)
+                        heights.append(height)
+                        aspect_ratios.append(width / height)
+                except Exception as e:
+                    print(f"Error processing {file_path}: {e}")
+    
+    return {
+        'width_mean': np.mean(widths),
+        'width_std': np.std(widths),
+        'height_mean': np.mean(heights),
+        'height_std': np.std(heights),
+        'aspect_ratio_mean': np.mean(aspect_ratios),
+        'aspect_ratio_std': np.std(aspect_ratios)
+    }
+
+# Calculate image statistics
+stats = get_image_stats(data_dir)
+
+# Save statistics to CSV
+stats_df = pd.DataFrame([stats])
+stats_df.to_csv(os.path.join(output_dir, 'raw_image_statistics.csv'), index=False)
+
+
+train_ds = tf.keras.preprocessing.image_dataset_from_directory(
+    data_dir,
+    validation_split=0.2,
+    subset="training",
+    seed=123,
+    image_size=image_size,
+    color_mode='grayscale',
+    batch_size=32
+)
+val_ds = tf.keras.preprocessing.image_dataset_from_directory(
+    data_dir,
+    validation_split=0.2,
+    subset="validation",
+    seed=123,
+    image_size=image_size,
+    color_mode='grayscale',
+    batch_size=32
+)
+
+def extract_numpy_data(dataset):
+    images, labels = [], []
+    for image_batch, label_batch in dataset:
+        images.append(image_batch.numpy())
+        labels.append(label_batch.numpy())
+    return np.concatenate(images), np.concatenate(labels)
+
+x_train, y_train = extract_numpy_data(train_ds)
+x_test, y_test = extract_numpy_data(val_ds)
+
+x_train = x_train.astype('float32') / 255.0
+x_test = x_test.astype('float32') / 255.0
+
+print("Number of training images:", len(x_train))
+print("Number of training labels:", len(y_train))
+print("Number of test images:", len(x_test))
+print("Number of test labels:", len(y_test))
+assert len(x_train) == len(y_train), "Mismatch in number of training images and labels"
+assert len(x_test) == len(y_test), "Mismatch in number of test images and labels"
+
+np.savez(os.path.join(output_dir, f'preprocessed_data_cvae_train_{image_size[0]}x{image_size[1]}.npz'),
+         x_train=x_train, y_train=y_train,
+         x_test=x_test, y_test=y_test)
+
+print(f"Image statistics saved to: {os.path.join(output_dir, 'raw_image_statistics.csv')}")
+print(f"Preprocessed data saved to: {os.path.join(output_dir, f'preprocessed_data_CVAE_train_{image_size[0]}x{image_size[1]}.npz')}")

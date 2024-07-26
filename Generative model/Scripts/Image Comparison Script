@@ -1,0 +1,52 @@
+import os
+import random
+import json
+from PIL import Image
+
+def select_and_copy_images():
+    raw_dir = "/home/shogg/RBHT projects/CVAE/Raw Input Images"
+    gen_dir_448 = "/home/shogg/RBHT projects/CVAE/Generated Images 448x448"
+    gen_dir_224 = "/home/shogg/RBHT projects/CVAE/Generated Images 224x224"
+    out_dir = "/home/shogg/RBHT projects/CVAE/Image Comparison"
+    
+    os.makedirs(out_dir, exist_ok=True)
+    
+    subdirs = next(os.walk(raw_dir))[1]  # Get subdirectories
+    assignment = {}
+    
+    for subdir in subdirs:
+        raw_images = os.listdir(os.path.join(raw_dir, subdir))
+        gen_images_448 = os.listdir(os.path.join(gen_dir_448, subdir))
+        gen_images_224 = os.listdir(os.path.join(gen_dir_224, subdir))
+        
+        raw_image = random.choice(raw_images)
+        gen_image_448 = random.choice(gen_images_448)
+        gen_image_224 = random.choice(gen_images_224)
+        
+        labels = ['A', 'B', 'C']
+        random.shuffle(labels)
+        
+        image_paths = [
+            (os.path.join(raw_dir, subdir, raw_image), "Raw Input Images"),
+            (os.path.join(gen_dir_448, subdir, gen_image_448), "Generated Images 448x448"),
+            (os.path.join(gen_dir_224, subdir, gen_image_224), "Generated Images 224x224")
+        ]
+        
+        subdir_assignment = {}
+        for (image_path, source), label in zip(image_paths, labels):
+            convert_and_save(image_path, os.path.join(out_dir, f"{subdir}_{label}.png"))
+            subdir_assignment[label] = source
+        
+        assignment[subdir] = subdir_assignment
+    
+    with open(os.path.join(out_dir, "assignment.json"), "w") as f:
+        json.dump(assignment, f, indent=2)
+
+def convert_and_save(input_path, output_path):
+    with Image.open(input_path) as img:
+        if img.mode != 'RGB':
+            img = img.convert('RGB')
+        img.save(output_path, 'PNG')
+
+if __name__ == "__main__":
+    select_and_copy_images()

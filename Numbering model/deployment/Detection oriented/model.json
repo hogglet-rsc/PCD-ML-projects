@@ -1,0 +1,26 @@
+{
+   "id": "66a169b2502c7a5591cf55e7",
+   "name": "MaskRCNN-ResNet50 OpenVINO FP16",
+   "version": 8,
+   "creation_date": "2024-07-24T20:53:06.204000+00:00",
+   "model_format": "OpenVINO",
+   "precision": [
+      "FP16"
+   ],
+   "has_xai_head": false,
+   "target_device": "CPU",
+   "target_device_type": null,
+   "performance": {
+      "score": 0.9329758713136728
+   },
+   "size": 89021601,
+   "latency": 0,
+   "fps_throughput": 0,
+   "optimization_type": "MO",
+   "optimization_objectives": {},
+   "model_status": "SUCCESS",
+   "configurations": [],
+   "previous_revision_id": "66a169b2502c7a5591cf55e4",
+   "previous_trained_revision_id": "66a169b2502c7a5591cf55e4",
+   "optimization_methods": []
+}
