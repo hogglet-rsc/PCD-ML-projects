@@ -10,7 +10,7 @@ This repository contains three machine learning models for detection and researc
 2. **Numbering Model**
    - Detects and numbers microtubule doublets in ciliary images
 
-3. **PCD Detection Model**
+3. **PCD Diagnostic Model**
    - XGBoost tree-based classifier
    - Diagnoses PCD based on:
      - Genotype
