@@ -19,7 +19,7 @@ This XGBoost-based classifier diagnoses Primary Ciliary Dyskinesia (PCD) using m
 
 1. PCD classification for each patient
 2. Precision-recall curve
-3. Feature importance plot
+3. Feature importance plot (can be used to compare historical weighting of different diagnostic techniques).
 
 ## Usage
 
