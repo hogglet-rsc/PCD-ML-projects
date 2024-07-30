@@ -1,0 +1,11 @@
+Image_name,MTD1,MTD2,MTD3,MTD4,MTD5,MTD6,MTD7,MTD8,MTD9
+image_01,Normal,No outer,No inner,No arms,Normal,No inner,No outer,No arms,Normal
+image_02,No inner,Normal,No arms,No outer,No inner,Normal,No arms,No inner,No outer
+image_03,No arms,No inner,Normal,No outer,No arms,No inner,Normal,No outer,No arms
+image_04,No outer,No arms,No inner,Normal,No outer,No arms,No inner,Normal,No outer
+image_05,Normal,No outer,No arms,No inner,Normal,No outer,No arms,No inner,Normal
+image_06,No inner,Normal,No outer,No arms,No inner,Normal,No outer,No arms,No inner
+image_07,No arms,No inner,Normal,No outer,No arms,No inner,Normal,No outer,No arms
+image_08,No outer,No arms,No inner,Normal,No outer,No arms,No inner,Normal,No outer
+image_09,Normal,No outer,No arms,No inner,Normal,No outer,No arms,No inner,Normal
+image_10,No inner,Normal,No outer,No arms,No inner,Normal,No outer,No arms,No inner
