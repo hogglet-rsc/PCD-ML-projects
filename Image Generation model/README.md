@@ -37,8 +37,8 @@ The dataset consists of anonymized labelled cilia cross sections:
 1. **Environment Setup**:
    - Clone the repository:
      ```
-     git clone https://github.com/yourusername/CVAE-Cilia-Generation.git
-     cd CVAE-Cilia-Generation
+     git clone https://github.com/hogglet-rsc/PCD-ML-projects.git
+     cd 'Image Generation model'
      ```
    - Set up a virtual environment (optional but recommended):
      ```
@@ -53,7 +53,7 @@ The dataset consists of anonymized labelled cilia cross sections:
 2. **Data Preparation**:
    - Place your raw cilia cross section images in the `Raw Input Images` folder.
    - Organize images by class in separate subfolders (e.g., Normal, Disarranged).
-   - Ensure images follow the naming convention: `[Class]_[Number]` (e.g., Normal_0001).
+   - Pre-processing script uses folder names as class labels.
 
 3. **Preprocessing**:
    - Run the preprocessing script, specifying desired resolution at top of script:
@@ -64,9 +64,9 @@ The dataset consists of anonymized labelled cilia cross sections:
    - Check `raw_image_statistics.csv` in the same folder for dataset statistics.
 
 4. **Model Training**:
-   - Start the training process:
+   - Start the training process using the correct training script for the dataset resolution:
      ```
-     python Scripts/cvae_training.py
+     python Scripts/cvae_training_224x224.py
      ```
    - The script will use the preprocessed images to train the CVAE model.
    - Trained encoder and decoder models will be saved in the `Models` directory.
@@ -78,7 +78,7 @@ The dataset consists of anonymized labelled cilia cross sections:
      python Scripts/cvae_inference.py
      ```
    - This will use the trained decoder model and latent space tensors to generate synthetic images.
-   - Generated images will be saved in the `Generated Images` folder.
+   - Generated images will be saved in the `Generated Images` sub-folders according to folder and image label.
 
 
 ## Further Work
@@ -89,20 +89,16 @@ Several avenues for potential improvement:
    - Expanding the training dataset could significantly enhance the model's ability to capture the full range of cilia variations.
    - A larger dataset would likely lead to more diverse and accurate synthetic image generation.
 
-2. **Higher Resolution Images**: 
-   - The current model generates images at 224x224 pixels, while the average input dimension is 524x508.
-   - Increasing the output resolution to match or exceed the average input size could preserve more detail.
+2. **Model Scaling**:
+   - cvae_training_448x448.ipynb is a much larger model than cvae_training_224x224.ipynb.
+   - We didn't have enough compute available to train and optimise it, but the higher parameter count should capture more detail.
 
-3. **Adaptive Input Size**: 
+3. **Advanced Architectures**:
+   - Exploring more recent architectures e.g. cGAN, Transformer or Diffusion-based architectures, could improve performance.
+  
+4. **Adaptive Input Size**: 
    - The current preprocessing step compresses all images to a square format, potentially losing aspect ratio information.
    - Implementing an adaptive input size could better preserve the original image proportions and structural details.
-
-4. **Model Scaling**:
-   - Increasing the number of parameters in the model could potentially capture more complex patterns in the data.
-   - Utilizing more computational resources for training (e.g., longer training times, distributed training) might yield performance improvements.
-
-5. **Advanced Architectures**:
-   - Exploring more recent architectures e.g. cGAN, Transformer or Diffusion-based architectures, could improve performance.
 
 ## Requirements
 
