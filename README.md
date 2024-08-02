@@ -5,13 +5,13 @@ This repository contains three machine learning models for detection and researc
 ## Models
 
 1. **Image Generation Model**
-   - CVAE (Conditional Variational Autoencoder) for generating cilia cross sections
+   - CVAE (Conditional Variational Autoencoder) for generating cilia cross sections.
 
-2. **Numbering Model**
-   - Detects and numbers microtubule doublets in ciliary images
+2. **MTD Classification Model**
+   - Detects, numbers and classifies microtubule doublets in ciliary images.
 
 3. **PCD Diagnostic Model**
-   - XGBoost tree-based classifier
+   - XGBoost tree-based classifier.
    - Diagnoses PCD based on:
      - Genotype
      - Ciliary beat frequency
