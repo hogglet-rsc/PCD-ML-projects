@@ -1,6 +1,6 @@
 # PCD-ML-Models
 
-This repository contains three machine learning models for detection and research in Primary Ciliary Dyskinesia (PCD).
+This repository contains three machine learning models for diagnostics and research in Primary Ciliary Dyskinesia (PCD).
 
 ## Models
 
