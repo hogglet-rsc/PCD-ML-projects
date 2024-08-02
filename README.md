@@ -4,7 +4,7 @@ This repository contains three machine learning models for detection and researc
 
 ## Models
 
-1. **Generative Model**
+1. **Image Generation Model**
    - CVAE (Conditional Variational Autoencoder) for generating cilia cross sections
 
 2. **Numbering Model**
