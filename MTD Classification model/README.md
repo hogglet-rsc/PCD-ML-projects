@@ -8,7 +8,7 @@ This model detects, numbers and classifies microtubule doublets (MTDs) in ciliar
    - Clone the repository:
      ```
      git clone https://github.com/hogglet-rsc/PCD-ML-projects.git
-     cd 'Image Generation model'
+     cd 'MTD Classification model'
      ```
    - Set up a virtual environment (optional but recommended):
      ```
