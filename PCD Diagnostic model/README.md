@@ -40,6 +40,6 @@ This XGBoost-based classifier diagnoses Primary Ciliary Dyskinesia (PCD) using m
 
 ## Usage
 
-1. Prepare your dataset with required features
+1. Compile your dataset with required features
 2. Run `detection_model.ipynb`
 

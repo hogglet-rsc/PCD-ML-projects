@@ -14,8 +14,8 @@ import csv
 import pandas as pd
 
 # load inference models
-numbering_model_path = "Deployed models/Numbering/deployment"
-classification_model_path = "/Deployed models/Classification/deployment"
+numbering_model_path = "../Deployed models/Numbering/deployment"
+classification_model_path = "../Deployed models/Classification/deployment"
 numbering_deployment = Deployment.from_folder(numbering_model_path)
 numbering_deployment.load_inference_models(device="CPU")
 
@@ -197,8 +197,8 @@ def process_image(image_path, prediction_dict, output_folder, unusable_folder):
     return is_usable, df
 
 # Main processing loop
-input_folder = 'GUI/Raw Images GUI'
-output_folder = 'GUI/Processed Images GUI' 
+input_folder = '../Images/GUI/Raw Images GUI'
+output_folder = '../Images/GUI/Processed Images GUI' 
 
 # Ensure the output and unusable folders exist
 os.makedirs(output_folder, exist_ok=True)
