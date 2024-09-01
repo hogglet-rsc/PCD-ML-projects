@@ -9,6 +9,7 @@ This repository contains three machine learning models for diagnostics and resea
 
 2. **MTD Classification Model**
    - Detects, numbers and classifies microtubule doublets in ciliary images.
+   - Works by drag and drop into graphical user interface.
 
 3. **PCD Diagnostic Model**
    - XGBoost tree-based classifier.
