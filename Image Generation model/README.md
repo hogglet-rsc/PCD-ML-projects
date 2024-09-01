@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project uses a Conditional Variational Autoencoder (CVAE) to generate synthetic images of cilia cross sections. The primary goal is to supplement the training data for detection models used in Primary Ciliary Dyskinesia (PCD) research and diagnostics.
+This project uses a Conditional Variational Autoencoder (CVAE) to generate synthetic images of cilia cross sections. The goal is to provide supplementary training data for detection models used in Primary Ciliary Dyskinesia (PCD) research and diagnostics.
 
 
 ## Dataset
