@@ -1,6 +1,6 @@
 # PCD Diagnostic Model
 
-This XGBoost-based classifier diagnoses Primary Ciliary Dyskinesia (PCD) using multiple patient data points.
+This XGBoost-based classifier diagnoses Primary Ciliary Dyskinesia (PCD) based on 4 diagnostic tests.
 
 ## Contents
 
