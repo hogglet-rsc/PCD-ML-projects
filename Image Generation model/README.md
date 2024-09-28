@@ -86,7 +86,6 @@ The dataset consists of anonymized labelled cilia cross sections:
 Several avenues for potential improvement:
 
 1. **Larger Labelled Dataset**: 
-   - Expanding the training dataset could significantly enhance the model's ability to capture the full range of cilia variations.
    - A larger dataset would likely lead to more diverse and accurate synthetic image generation.
 
 2. **Model Scaling**:
@@ -94,11 +93,12 @@ Several avenues for potential improvement:
    - We didn't have enough compute available to train and optimise it, but the higher parameter count should capture more detail.
 
 3. **Advanced Architectures**:
-   - Exploring more recent architectures e.g. cGAN, Transformer or Diffusion-based architectures, could improve performance.
+   - Exploring more recent architectures e.g. cGAN, Transformer or Diffusion-based architectures could improve performance.
   
 4. **Adaptive Input Size**: 
    - The current preprocessing step compresses all images to a square format, potentially losing aspect ratio information.
-   - Implementing an adaptive input size could better preserve the original image proportions and structural details.
+   - They are later resized using a randomly chosen realistic aspect ratio.
+   - An adaptive input size is more complex to implement, but may improve synthetic image quality.
 
 ## Requirements
 
